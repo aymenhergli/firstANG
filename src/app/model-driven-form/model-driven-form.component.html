@@ -1,0 +1,61 @@
+<h1>Add contact informations</h1>
+<form [formGroup]="registerform">
+  <div class="form-group">
+    <label>Name:</label>
+    <input type="text" class="form-control" formControlName="name">
+    <div class="alert alert-danger" *ngIf="name.errors && name.touched">
+      the name is a required field
+    </div>
+  </div>
+  <div class="form-group">
+    <label>email:</label>
+    <input type="text" class="form-control" formControlName="email">
+    <div class="alert alert-danger" *ngIf="email.errors && email.touched">
+      <div class="alert alert-danger" *ngIf="email.errors.required">the name is a required field</div>
+
+      <div class="alert alert-danger" *ngIf="email.errors.pattern">
+      the name is a required field</div>
+</div>
+  </div>
+  <h1>information</h1>
+  <div class formGroupName="information" >
+    <div class="form-group">
+      <label>city:</label>
+      <input type="text" class="form-control" formControlName="city">
+      <div class="alert alert-danger" *ngIf="city.errors && city.touched">
+
+          the city is a required field
+      </div>
+
+    </div>
+    <div class="form-group">
+      <label>age:</label>
+      <input type="number" class="form-control" formControlName="age">
+      <div class="alert alert-danger" *ngIf="age.errors && age.touched">
+        <div class="alert alert-danger" *ngIf="age.errors.required">
+          the name is a required field
+        </div> <div class="alert alert-danger" *ngIf="age.errors.pattern">
+        At least 5 numbers
+      </div>
+      </div>
+
+    </div>
+    <div class="form-group">
+      <label>Birth:</label>
+      <input type="date" class="form-control" formControlName="birth">
+
+      </div>
+
+
+
+    <div class="form-group" *ngIf="birth.valid && birth.valid">
+      <label>password:</label>
+      <input type="number" class="form-control" formControlName="code">
+
+  </div>
+  </div>
+</form>
+  <button class="alert-dark" (click)="save()" [disabled]="registerform.invalid">Save</button>
+
+<p>Status:{{registerform.status}}</p>
+<p>Value:{{registerform.value| json}}</p>

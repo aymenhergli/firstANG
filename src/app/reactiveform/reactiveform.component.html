@@ -1,0 +1,35 @@
+<h1>inscription</h1>
+<form [formGroup]="registerform" (ngSubmit)="onsubmit()">
+ <div class="form-group">
+   <label>firstname</label>
+   <input type="text" formControlName="firstname" class="form-control">
+ </div>
+  <div class="alert alert-danger" *ngIf="registerform.controls ['firstname'].errors && registerform.controls['firstname'].touched">
+   <div class="alert alert-danger" *ngIf="registerform.controls ['firstname'].hasError('required')"> first name is a required field</div>
+  <div class="alert alert-danger" *ngIf="registerform.controls ['firstname'].hasError('minlength')">
+    first name minlength is 3</div>
+  </div>
+  <div class="form-group">
+    <label>lastname</label>
+    <input type="text" formControlName="lastname" class="form-control">
+  </div>
+  <div class="alert alert-danger" *ngIf="registerform.controls ['lastname'].errors && registerform.controls['lastname'].touched">
+    <div class="alert alert-danger" *ngIf="registerform.controls ['lastname'].hasError('required')"> last name is a required field </div>
+    <div class="alert alert-danger" *ngIf="registerform.controls ['lastname'].hasError('pattern')">
+      pattern </div>
+  </div>
+  <h3>Info</h3>
+  <div formGroupName="info">
+    <div class="form-group">
+      <label>address</label>
+      <input type="text" formControlName="address" class="form-control">
+    </div>
+    <div class="alert alert-danger" *ngIf="registerform.get('info').get('address').errors && registerform.get('info').get('address').touched">address required</div>
+    <div class="form-group">
+      <label>phone</label>
+      <input type="number" formControlName="phone" class="form-control">
+    </div>
+  </div>
+  <button type="submit" class="btn btn-success"[disabled]="registerform.invalid" >Submit</button>
+  <button type="submit" class="btn btn-warning" (click)="reset()" >cancel</button>
+</form>

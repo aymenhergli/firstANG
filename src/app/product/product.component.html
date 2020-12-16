@@ -1,0 +1,18 @@
+<div class="col-md-3" *ngIf="product.members<pricemaxinput || pricemaxinput==null">
+  <div class="card" style="width: 18rem;">
+
+    <img src="../../assets/0899464068f3ba2a7f81c250596e7f16.jpg" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">{{product.place}}</h5>
+      <p class="card-text">host : {{product.host}}</p>
+      <p class="card-text">startdate : {{product.startdate}}</p>
+      <p class="card-text">periode : {{product.periode}}</p>
+      <p class="card-text">members : {{product.members}}</p>
+      <p class="card-text">describtion : {{product.description}}</p>
+     <!-- <a routerLink="detail/{{product.p}}">details</a>-->
+
+      <button href="#" class="btn btn-primary" (click)="SendNotif()">{{product.like}}: participate</button><p> </p>
+      <button href="#" class="btn btn-outline-warning" (click)="delete()">Delete</button>
+  </div>
+</div>
+

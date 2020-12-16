@@ -1,0 +1,54 @@
+{
+  "product": [
+    {
+      "id": 1,
+      "place": "nabeul",
+      "host": "hargoul",
+      "startdate": "15 mai",
+      "periode": "3 days",
+      "members": 20,
+      "description": "bring all what you have we'll have some adventure",
+      "like": 0
+    },
+    {
+      "id": 2,
+      "place": "hawaria",
+      "host": "hargoul",
+      "startdate": "30 mai",
+      "periode": "4 days",
+      "members": 25,
+      "description": "bring all what you have we'll have some adventure",
+      "like": 0
+    },
+    {
+      "id": 3,
+      "place": "beja",
+      "host": "hargoul",
+      "startdate": "5 mai",
+      "periode": "2 days",
+      "members": 10,
+      "description": "bring all what you have we'll have some adventure",
+      "like": 0
+    },
+    {
+      "id": 35,
+      "place": "tozer",
+      "host": "khalil",
+      "startdate": "35 juin",
+      "periode": "3 days",
+      "members": 35,
+      "description": "hjfghcyucdghchtrfgc",
+      "like": 0
+    },
+    {
+      "id": 4,
+      "place": "takelsa",
+      "host": "mohsen",
+      "startdate": "8 juin",
+      "periode": "1 day",
+      "members": 45,
+      "description": "hjgfyufytjuftuyjgfhjyu",
+      "like": 0
+    }
+  ]
+}

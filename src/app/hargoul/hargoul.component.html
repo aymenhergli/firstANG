@@ -1,0 +1,12 @@
+
+<form>
+  <div class="form-group">
+    <h3>max members:</h3>
+    <input name="priceMax" type="number" [(ngModel)]="priceMax" class="form-control">
+  </div>
+</form>
+<button class="btn btn-warning" (click)="showform()">Add new event</button>
+<app-formproduct (eventSaveproduct)="pushProduct($event)" *ngIf="!hideform"></app-formproduct>
+<div class="row">
+<app-product *ngFor="let p of listproduct" [product]="p" class="col-lg-4 col-md-4" (notification)="incrementLike($event)" (notification2)="deletep($event)" [pricemaxinput]="priceMax"></app-product>
+</div>

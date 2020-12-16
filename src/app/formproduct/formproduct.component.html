@@ -1,0 +1,44 @@
+<h1>Add Event</h1>
+<form #f="ngForm">
+  <div class="form-group">
+  <label>id:</label>
+    <input type="number" name="id" class="form-control" [(ngModel)]="product.id" #i ="ngModel" required>
+  </div>
+  <div class="alert alert-danger" *ngIf="i.invalid && i.touched">id is required</div>
+  <div class="form-group">
+    <label>place:</label>
+    <input type="text" name="title" class="form-control" [(ngModel)]="product.place" #t ="ngModel" required minlength="3" pattern="^[a-zA-Z]+$">
+  </div>
+  <div class="alert alert-danger" *ngIf="t.invalid &&t.touched">
+    <div *ngIf="t.errors.required">place is required</div>
+    <div *ngIf="t.errors.minlength">place minlength is 3</div>
+    <div *ngIf="t.errors.pattern">Only use letters</div>
+    </div>
+
+  <div class="form-group">
+    <label>host</label>
+    <input type="text" name="host" class="form-control" [(ngModel)]="product.host" #d ="ngModel" required>
+  </div>
+  <div class="alert alert-danger" *ngIf="d.invalid && d.touched">host is required</div>
+  <div class="form-group">
+    <label>startdate:</label>
+    <input type="text" name="startdate" class="form-control" [(ngModel)]="product.startdate" #e ="ngModel" required>
+  </div>
+  <div class="alert alert-danger" *ngIf="e.invalid && e.touched">startdate is required</div>
+  <div class="form-group">
+    <label>periode:</label>
+    <input type="text" name="periode" class="form-control" [(ngModel)]="product.periode" #s ="ngModel" required>
+  </div>
+  <div class="alert alert-danger" *ngIf="s.invalid && s.touched">periode is required</div>
+  <div class="form-group">
+    <label>members:</label>
+    <input type="number" name="members" class="form-control" [(ngModel)]="product.members" #h ="ngModel" required>
+  </div>
+  <div class="alert alert-danger" *ngIf="h.invalid && h.touched">members is required</div>
+  <div class="form-group">
+    <label>description:</label>
+    <input type="text" name="description" class="form-control" [(ngModel)]="product.description" #x ="ngModel" required>
+  </div>
+  <div class="alert alert-danger" *ngIf="x.invalid && x.touched">members is required</div>
+<button class="btn btn-success" [hidden]="f.invalid " (click)="save()">save</button>
+</form>
